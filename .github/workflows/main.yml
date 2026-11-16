@@ -39,17 +39,6 @@ jobs:
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
-      - name: Download & Install Trunk Directly
-        run: |
-          wget -qO- https://github.com/thedodd/trunk/releases/download/v0.16.0/trunk-x86_64-unknown-linux-gnu.tar.gz | tar -xzf-
-          sudo mv trunk /usr/local/bin/trunk
-
-      - name: Build Leptos Release
-        working-directory: frontend
-        run: trunk build --release
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: frontend/dist
