@@ -1,0 +1,44 @@
+name: Deploy VeloMotion Frontend
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+# Dibutuhkan agar action bisa mem-push ke branch gh-pages
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Install Rust Toolchain
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-unknown-unknown
+
+      - name: Install Trunk
+        uses: jetli/trunk-action@v0.5.0
+        with:
+          version: 'latest'
+
+      - name: Build Leptos Release
+        working-directory: frontend
+        env:
+          # GitHub Pages project site dilayani di /<nama-repo>/
+          VELO_BASE_PATH: /VeloMotion
+        run: trunk build --release --public-url /VeloMotion/
+
+      - name: SPA fallback for GitHub Pages
+        # Refresh di /editor/<id> harus tetap memuat app, bukan 404
+        run: cp frontend/dist/index.html frontend/dist/404.html
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: frontend/dist
