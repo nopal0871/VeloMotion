@@ -1,0 +1,11 @@
+id,area,feature,priority,clone,note
+F01,Dashboard,Project List (Recent Projects),must,yes,Fetched via Vercel API from Supabase
+F02,Dashboard,Create New Video Project,must,yes,Instantly initializes project and routes to editor
+F03,Editor,Zone A: Canvas Preview Loop (rAF),must,yes,60fps requestAnimationFrame rendering loop
+F04,Editor,Zone B: Timeline NLE Virtual Array,must,yes,Vec<VideoClip> state management in Leptos
+F05,Editor,Zone C: Local Media Import,must,yes,File System Access API with zero server upload
+F06,Editor,Zone D: Editing Toolbar (Split & Ripple Delete),must,yes,Non-destructive timeline editing
+F07,Editor,Zone E: FFmpeg.wasm Export Engine,must,yes,Client-side stream-copy MP4 rendering
+F08,Backend,Vercel Rust API (/api/save_project),must,yes,Rust serverless function with SQLx
+F09,Backend,Vercel Rust API (/api/load_project),must,yes,Rust serverless function fetching Supabase JSON
+F10,Advanced,Keyframe Animation Curves,should,partial,Basic keyframe interpolation structure ready
