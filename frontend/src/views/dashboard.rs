@@ -1,6 +1,5 @@
 use leptos::*;
 use leptos_router::*;
-<<<<<<< HEAD
 use crate::models::*;
 use crate::storage::*;
 use crate::effects::*;
@@ -462,7 +461,6 @@ pub fn DashboardPage() -> impl IntoView {
                     </div>
                 </div>
             })}
-=======
 use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Serialize, Deserialize, Debug)]
@@ -576,7 +574,6 @@ pub fn DashboardView() -> impl IntoView {
                     />
                 </div>
             </section>
->>>>>>> 3c3702960cb7d26ba2cdfe0d5e737ed02cd3374f
         </div>
     }
 }
