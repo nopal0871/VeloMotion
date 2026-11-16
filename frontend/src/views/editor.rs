@@ -1,6 +1,5 @@
 use leptos::*;
 use leptos_router::*;
-<<<<<<< HEAD
 use crate::models::*;
 use crate::storage::*;
 use crate::effects::*;
@@ -240,7 +239,6 @@ pub fn EditorPage() -> impl IntoView {
                     }
                 }
                 persist_project(proj);
-=======
 use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Serialize, Deserialize, Debug, PartialEq)]
@@ -316,12 +314,10 @@ pub fn EditorView() -> impl IntoView {
                     list[pos].trim_out = original.trim_in + split_point;
                     list.insert(pos + 1, second_half);
                 }
->>>>>>> 3c3702960cb7d26ba2cdfe0d5e737ed02cd3374f
             });
         }
     };
 
-<<<<<<< HEAD
     // Timeline Ruler click handler for Interactive Beat System
     let handle_ruler_click = move |ev: web_sys::MouseEvent| {
         // Assume timeline total width represents 30 seconds
@@ -688,7 +684,6 @@ pub fn EditorView() -> impl IntoView {
                         }).collect::<Vec<_>>()
                     }}
                 </div>
-=======
     let delete_clip = move |_| {
         if let Some(id) = selected_clip_id.get() {
             clips.update(|list| {
@@ -910,7 +905,6 @@ pub fn EditorView() -> impl IntoView {
 
                 </div>
 
->>>>>>> 3c3702960cb7d26ba2cdfe0d5e737ed02cd3374f
             </div>
         </div>
     }
