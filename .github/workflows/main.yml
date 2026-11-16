@@ -3,14 +3,11 @@ name: Deploy VeloMotion Frontend
 on:
   push:
     branches: [ main ]
-<<<<<<< HEAD
   workflow_dispatch:
 
 # Dibutuhkan agar action bisa mem-push ke branch gh-pages
 permissions:
   contents: write
-=======
->>>>>>> 3c3702960cb7d26ba2cdfe0d5e737ed02cd3374f
 
 jobs:
   build-and-deploy:
@@ -24,7 +21,6 @@ jobs:
         with:
           targets: wasm32-unknown-unknown
 
-<<<<<<< HEAD
       - name: Install Trunk
         uses: jetli/trunk-action@v0.5.0
         with:
@@ -43,7 +39,6 @@ jobs:
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
-=======
       - name: Download & Install Trunk Directly
         run: |
           wget -qO- https://github.com/thedodd/trunk/releases/download/v0.16.0/trunk-x86_64-unknown-linux-gnu.tar.gz | tar -xzf-
