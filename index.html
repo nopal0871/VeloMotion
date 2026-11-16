@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VeloMotion - Pro Client-Side WASM NLE</title>
+    <!-- Trunk: compile crate Rust ini menjadi WASM dan sisipkan ke halaman -->
+    
+<script type="module">
+import init, * as bindings from '/VeloMotion/velomotion-frontend-e2ebe43d5c4fa7bf.js';
+const wasm = await init({ module_or_path: '/VeloMotion/velomotion-frontend-b755066568c65c95_bg.wasm' });
+
+
+window.wasmBindings = bindings;
+
+
+dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+
+</script>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+<link rel="modulepreload" href="/VeloMotion/velomotion-frontend-e2ebe43d5c4fa7bf.js" crossorigin="anonymous" integrity="sha384-Gj8tqa4op2+cVQ5tkZmVi2FkrITrYuWmBL6/XOaAc7yqGh9wdvKYasyqLC0GPbEE"><link rel="preload" href="/VeloMotion/velomotion-frontend-b755066568c65c95_bg.wasm" crossorigin="anonymous" integrity="sha384-yl18ozPw1P7LSBu1kdUQe29GAEFgUi6sXEg4I1yKVS+C1dGJeZ1J0IE5tyH8v2HG" as="fetch" type="application/wasm"></head>
+<body class="bg-zinc-950 text-zinc-100 min-h-screen font-sans selection:bg-green-500 selection:text-white">
+    <div id="app"></div>
+</body>
+</html>
