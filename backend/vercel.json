@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/save_project.rs",
+      "use": "@vercel/rust"
+    },
+    {
+      "src": "api/load_project.rs",
+      "use": "@vercel/rust"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/save_project",
+      "dest": "/api/save_project.rs"
+    },
+    {
+      "src": "/api/load_project",
+      "dest": "/api/load_project.rs"
+    }
+  ]
+}
