@@ -13,12 +13,9 @@ wasm-bindgen = "0.2"
 web-sys = { version = "0.3", features = [
     "Window", "Document", "HtmlCanvasElement", "CanvasRenderingContext2d",
     "File", "FileList", "FileReader", "HtmlInputElement", "EventTarget",
-<<<<<<< HEAD
     "Performance", "Url",
     "Element", "HtmlElement", "DomRect", "MouseEvent", "Storage"
-=======
     "Performance", "Url"
->>>>>>> 3c3702960cb7d26ba2cdfe0d5e737ed02cd3374f
 ] }
 js-sys = "0.3"
 serde = { version = "1.0", features = ["derive"] }
@@ -30,7 +27,5 @@ console_error_panic_hook = "0.1"
 uuid = { version = "1.29", features = ["v4", "js"] }
 wasm-bindgen-futures = "0.4"
 chrono = { version = "0.4", features = ["serde", "clock", "wasmbind"] }
-=======
 uuid = { version = "1.6", features = ["v4", "serde"] }
 wasm-bindgen-futures = "0.4"
->>>>>>> 3c3702960cb7d26ba2cdfe0d5e737ed02cd3374f
